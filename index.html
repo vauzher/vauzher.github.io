@@ -1,1 +1,24 @@
-hello world
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Referral Link Generator</h2>
+
+<form id="referralForm">
+  Name: <input type="text" id="name"><br><br>
+  <input type="button" value="Generate Link" onclick="generateLink()">
+</form> 
+
+<p id="linkOutput"></p>
+
+<script>
+function generateLink() {
+  var name = document.getElementById("name").value;
+  var formattedName = name.replace(" ", "+");
+  var link = "https://docs.google.com/forms/d/e/1FAIpQLSeTcdop2ReD7UivFK11VXLU1bpbE0xlzOb4hd10RWfcukBwyA/viewform?entry.1206042007=" + formattedName;
+  document.getElementById("linkOutput").innerHTML = "<a href='" + link + "' target='_blank'>" + link + "</a>";
+}
+</script>
+
+</body>
+</html>
